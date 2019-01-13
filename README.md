@@ -15,4 +15,4 @@ ZONE=******.ru # FQDN
 
 TTL=120
 
-Usage is as easy as 'certbot certonly --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d <domain> -d *.<domain>'.
+Usage is as easy as 'certbot certonly --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d domain -d *.domain'.
