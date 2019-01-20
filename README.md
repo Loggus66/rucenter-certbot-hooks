@@ -1,18 +1,18 @@
 # rucenter-certbot-hooks
-Create a file creds.txt in the folder and populate it with following variables:
+Создайте файл creds.txt в каталоге с хуками:
 
-USERNAME=******/NIC-D # nic.ru username
+USERNAME=******/NIC-D # логин от учётки nic.ru
 
-PASSWORD=******* # nic.ru password
+PASSWORD=******* # пароль от учётки nic.ru
 
 CLIENTID=****
 
-SECRET=****** # API login and password, can be acquired at https://www.nic.ru/manager/oauth.cgi?step=oauth.app_register
+SECRET=****** # реквизиты к API, запросить можно по ссылке https://www.nic.ru/manager/oauth.cgi?step=oauth.app_register
 
-DNSACCOUNT=DP****** # DNS-master account ID
+DNSACCOUNT=DP****** # Логин от учётки DNS-хостинга Rucenter
 
 ZONE=******.ru # FQDN
 
 TTL=120
 
-Usage is as easy as 'certbot certonly --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d domain -d *.domain'.
+Пример использования: 'certbot certonly --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d домен -d *.домен'.
