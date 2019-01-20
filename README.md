@@ -16,3 +16,5 @@ ZONE=******.ru # FQDN
 TTL=120
 
 Пример использования: 'certbot certonly --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d домен -d *.домен'.
+
+Если вам нужен плагин для acme.sh, он есть здесь: https://bitbucket.org/mr-fedorich/dns_nic
