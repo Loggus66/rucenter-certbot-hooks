@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source $(dirname "$0")/creds.txt
+ZONE=$(expr match "$CERTBOT_DOMAIN" '.*\.\(.*\..*\)')
 
 #get token for all methods
 TOKEN=$(curl -s -X POST 'https://api.nic.ru/oauth/token' \
@@ -17,7 +18,7 @@ curl -s -X PUT "https://api.nic.ru/dns-master/services/$DNSACCOUNT/zones/$ZONE/r
 <request>
  <rr-list>
   <rr>
-   <name>_acme-challenge.$ZONE.</name>
+   <name>_acme-challenge.$CERTBOT_DOMAIN.</name>
    <ttl>$TTL</ttl>
    <type>TXT</type>
    <txt>

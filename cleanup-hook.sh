@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source $(dirname "$0")/creds.txt
+ZONE=$(expr match "$CERTBOT_DOMAIN" '.*\.\(.*\..*\)')
 
 test -f /tmp/.$ZONE-token || exit 0 
 TOKEN=$(cat /tmp/.$ZONE-token)
