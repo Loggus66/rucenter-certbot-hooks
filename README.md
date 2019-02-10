@@ -11,8 +11,6 @@ SECRET=****** # реквизиты к API, запросить можно по с
 
 DNSACCOUNT=DP****** # Логин от учётки DNS-хостинга Rucenter
 
-ZONE=******.ru # FQDN
-
 TTL=120
 
 Пример использования: 'certbot certonly --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d домен -d *.домен'.
