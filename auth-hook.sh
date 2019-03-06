@@ -3,6 +3,11 @@
 source $(dirname "$0")/creds.txt
 ZONE=$(expr match "$CERTBOT_DOMAIN" '.*\.\(.*\..*\)')
 
+# match gives empty output for second level domains
+if [ -z "$ZONE" ];
+then ZONE=$CERTBOT_DOMAIN;
+fi
+
 #get token for all methods
 TOKEN=$(curl -s -X POST 'https://api.nic.ru/oauth/token' \
 -H 'Content-Type: application/x-www-form-urlencoded' \
