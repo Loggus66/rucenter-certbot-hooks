@@ -3,6 +3,11 @@
 source $(dirname "$0")/creds.txt
 ZONE=$(expr match "$CERTBOT_DOMAIN" '.*\.\(.*\..*\)')
 
+# match gives empty output for second level domains
+if [ -z "$ZONE" ];
+then ZONE=$CERTBOT_DOMAIN;
+fi
+
 test -f /tmp/.$ZONE-token || exit 0 
 TOKEN=$(cat /tmp/.$ZONE-token)
 # grep all existing TXT _acme-challenge record IDs and delete them
