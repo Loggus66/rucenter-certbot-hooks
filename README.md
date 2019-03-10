@@ -13,7 +13,7 @@ DNSACCOUNT=DP****** # Логин от учётки DNS-хостинга Rucenter
 
 TTL=120
 
-Пример использования: 'certbot certonly --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d домен -d *.домен'.
+Пример использования: 'certbot certonly --agree-tos --manual-public-ip-logging-ok --register-unsafely-without-email --manual --preferred-challenges=dns --manual-auth-hook ./auth-hook.sh --manual-cleanup-hook ./cleanup-hook.sh -d домен -d *.домен'.
 
 Известные ошибки:
 Ошибка {"error":"invalid_client"}: если все реквизиты верны, попробуйте зарегистрировать новое приложение.
